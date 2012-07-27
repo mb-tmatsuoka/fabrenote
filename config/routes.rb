@@ -1,5 +1,7 @@
 Fabrenote::Application.routes.draw do
-  resources :accounts
+  resources :accounts do 
+    resources :notebooks, :only => [:new, :create]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
