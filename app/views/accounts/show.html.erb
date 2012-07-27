@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @account.name %>
+</p>
+
+<p>
+  <b>Access key:</b>
+  <%= @account.access_key_id %>
+</p>
+
+<p>
+  <b>Secret access key:</b>
+  <%= @account.secret_access_key %>
+</p>
+
+<p>
+  <b>notebooks:</b>
+  <% @account.notebooks.each do |notebook| %>
+    <p>
+      <%= "#{notebook.name} #{notebook.description}" %>
+    </p>
+  <%end%>
+
+</p>
+
+<%= render @account.notebooks.build %>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>
+
