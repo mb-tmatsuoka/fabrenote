@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120727020130) do
   create_table "notebooks", :force => true do |t|
     t.string   "name"
     t.string   "description"
+    t.integer  "account_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
